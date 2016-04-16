@@ -1,0 +1,6 @@
+<?php
+
+class site_model extends Model {
+	
+	
+}

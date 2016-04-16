@@ -1,0 +1,122 @@
+/* GENERAL CSS DOCUMENT */
+body{margin:0; padding:0;}
+label.test {display: block;}
+th, td {padding:0px 20px; height:40px; text-align:center;}
+td.buttons{padding:0; width:250px; height:40px;}
+p.price{margin:5px 0px 10px 0px; padding:0; font-size:20px; font-weight:bold;}
+h4{margin:0; padding:0;}
+p.glyph{margin:0; padding:0;}
+.form-horizontal{border:solid 1px grey; border-radius:20px; padding:20px;}
+table{margin:0 auto;}
+
+.header-strip {
+    height: 400px;
+    background: url('../img/header.png') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.tagline {
+    text-shadow: 0 0 10px #000;
+    color: #fff;
+}
+
+.error{
+
+	font-family:calibri;
+	color:red;
+	margin:0; 
+	padding:0;
+	font-size:18px;
+
+}
+span.test{
+	padding:0px 5px;
+}
+
+/* PRODUCT PAGE */
+
+.thumbnail img {
+    width: 100%;
+    margin-bottom:0;
+}
+
+.thumbnail2 img {
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+.portfolio-item {
+
+}
+
+.center-table{
+    text-align:center;
+}
+
+th {
+  text-align:center;          
+}
+
+.row_container{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding:10px;
+    margin-top:30px;
+    text-align:center;
+}
+
+.test-box{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding:10px;
+    margin:10px;
+}
+
+.thumb-img{
+    width: 100%;
+    margin-bottom:0;
+
+}
+
+.circle_shape{
+    display: inline-block;
+    width:100px;
+    height:100px;
+    background:#213d6c;
+    color:white;
+    border-radius: 100%;
+    line-height: 120px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.thumb-test{
+    width:100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding:10px;
+    margin:10px;
+    text-align: center; 
+}
+
+.panel > .panel-heading {
+    background-image: none;
+    background-color: #213d6c;
+    color: white;
+}
+
+.btn-primary {
+    background-image: none;
+    background-color: #213d6c;
+    color: white;
+}
