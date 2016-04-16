@@ -18,7 +18,7 @@ echo $buffer;
 
         <hr>
 
-            <!-- Sign up Form -->
+            <!-- Update Info Form -->
                 <div class="panel panel-primary margin-bottom-40">
                     <div class="panel-heading">
                         <h3 class="panel-title"><i class="fa fa-car" style="padding-right:10px;"></i>Update Car record</h3>

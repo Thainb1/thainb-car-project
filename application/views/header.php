@@ -60,6 +60,9 @@
                     <li>
                         <?php echo anchor('form/users_db', 'Test Link', 'class="link-class"') ?>
                     </li>
+                    <li>
+                        <?php echo anchor('Gallery/gallery', 'Gallery', 'class="link-class"') ?>
+                    </li>
                 </ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="<?php echo site_url('site/sign_up'); ?>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

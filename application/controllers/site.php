@@ -6,8 +6,14 @@ class Site extends CI_Controller
 	/*--- The main 'index' function that the controller will default to ---*/
 	
 	function index()
-	{	
-		$this->load->view('home');
+	{
+		$data = array();
+
+		if ($query = $this->site_model->get_news()) 
+		{
+			$data['records'] = $query;
+		}
+		$this->load->view('home', $data);
 	}
 
 	/*--- Showroom function that pulls the car records for the car index page ---*/

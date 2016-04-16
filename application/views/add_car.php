@@ -69,8 +69,40 @@ echo $buffer;
                                 <!--<p><?php echo form_error('special'); ?></p>-->
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Add Car Record</button>
+
+                            <!-- Test for picture window for when images are uploaded for preview (Style will go in general.css)-->
+
+                            <div>Car Image Upload Area</div>
                             
+                            <div class="panel panel-default">
+
+                                <div class="panel-body" style="height:150px; padding:0;">
+
+                                    <div style="float:left; width:100px; height:100px; margin:25px; background:grey;"></div>
+                                    <div style="float:left; width:100px; height:100px; margin:25px; background:grey;"></div>
+                                    <div style="float:left; width:100px; height:100px; margin:25px; background:grey;"></div>
+                                    <div style="float:left; width:100px; height:100px; margin:25px; background:grey;"></div>
+                                    <div style="float:left; width:100px; height:100px; margin:25px; background:grey;"></div>
+                                    <div style="float:left; width:100px; height:100px; margin:25px; background:grey;"></div>
+                                    <div style="float:left; width:100px; height:100px; margin:25px; background:grey;"></div>
+
+                                </div>
+                            </div>
+
+                            <!-- Test for adding pictures on a button (Style in general.css | .add_box)-->
+                            <div style="width:300px;">
+                                <?php 
+                                    echo form_open_multipart('gallery');
+                                    echo form_upload('userfile');
+                                    echo form_submit('upload', 'Upload');
+                                    echo form_close();
+                                ?>
+                            </div>
+
+
+                            <div>
+                            <button type="submit" class="btn btn-primary">Add Car Record</button>
+                            </div>
                             
                             
                         </form>
