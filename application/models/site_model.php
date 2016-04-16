@@ -142,4 +142,13 @@ function add_user($data)
 		//$this->db->where('car_id', $this->uri->segment(3));
 		$this->db->update('user_accounts_table', $data);
 	}
+
+	/* Section for calling car details for individual items*/
+
+	function calling_car()
+	{
+		$this->db->where('car_id', $this->uri->segment(3));
+		$query = $this->db->get('car_details_table');
+		return $query->result();
+	}
 }

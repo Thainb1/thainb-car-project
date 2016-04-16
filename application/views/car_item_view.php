@@ -8,7 +8,11 @@ echo $buffer;
 ?>
 
 <div class="container">
-<h1>2004 Ford Ranger</h1>
+
+<?php if(isset($records)): foreach($records as $row) : ?>
+
+
+<h1><?php echo $row->car_year ." ". $row->car_make ." ". $row->car_model; ?></h1>
     <div class="row">
 
         <div class="col-md-8 col-md-offset-2" style="margin-top:30px;">
@@ -43,8 +47,8 @@ echo $buffer;
 			</div>
 
         <div class="caption-full" style="margin:10px 0px;">
-                    <h4 class="pull-right">£1500.00</h4>
-                    <h4><a href="#">2004 Ford Ranger</a>
+                    <h4 class="pull-right"><?php echo "£".$row->car_price; ?></h4>
+                    <h4><a href="#"><?php echo $row->car_year ." ". $row->car_make ." ". $row->car_model; ?></a>
                     </h4>
         </div>
                    
@@ -67,12 +71,12 @@ echo $buffer;
     					</thead>
     					<tbody>
 					      	<tr>
-						        <td>1</td>
-						        <td>Ford</td>
-						        <td>Ranger</td>
-						        <td>2004</td>
-						        <td>201520</td>
-						        <td>MAN</td>
+					      		<td><?php echo $row->car_id; ?></td>
+								<td><?php echo $row->car_make; ?></td>
+								<td><?php echo $row->car_model; ?></td>
+								<td><?php echo $row->car_year; ?></td>
+								<td><?php echo $row->car_miles; ?></td>
+								<td><?php echo $row->car_transmission; ?></td>	
 					      </tr>
 					    </tbody>
   					</table>
@@ -83,14 +87,17 @@ echo $buffer;
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                 	
                 	<p><a href="sign_up" class="btn btn-primary btn-large">Speak to Sales Representative</a><a href="sign_up" class="btn btn-default btn-large" style="margin-left:10px;"><i class="fa fa-star-o"></i></a></p>
-
+                
 
 
                 </div>
             	
             </div>
 		</div>
-
+<?php endforeach; ?>
+        <?php else : ?>
+            <h2>No Records Returned</h2>
+        <?php endif; ?>
 </div>
 
     <!-- /.container -->

@@ -36,12 +36,15 @@ echo $buffer;
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail">
-                    <img src="<?php echo base_url("img/place_holder.jpg"); ?>" alt="Mazda Bongo">
+                    <img src="<?php echo base_url("img/place_holder.jpg"); ?>" alt="Place Holder">
                     <div class="caption">
+                        <?php echo '<input type="hidden" name="browser" value="'.$row->car_id.'">' ?>
                         <h4><?php echo $row->car_year ." | ". $row->car_make ." | ". $row->car_model; ?></h4>
                         <p class = "price"><?php echo "£".$row->car_price ?></p>
                         <p>
-                            <a href="#" class="btn btn-primary">Request Call</a> <a href="<?php echo site_url("site/view_item"); ?>" class="btn btn-default">More Info</a>
+                            <a href="#" class="btn btn-primary">Request Call</a> 
+                            <!--<a href="<?php echo site_url("site/view_item"); ?>" class="btn btn-default">More Info</a> -->
+                            <a class="btn btn-default" href="<?php echo base_url("index.php/site/view_item/$row->car_id"); ?>">More Info</a>
                         </p>
                     </div>
                 </div>

@@ -221,8 +221,15 @@ class Site extends CI_Controller
 
 	/*--- Controller to the INDIVIDUAL CAR PAGE Page ---*/
 	function view_item()
+	
 	{
-		$this->load->view('car_item_view');
+		$data = array();
+
+		if ($query = $this->site_model->calling_car()) 
+		{
+			$data['records'] = $query;
+		}
+		$this->load->view('car_item_view', $data);
 	}
 
 	/*--- Controller to the ADMIN DASHBOARD Page ---*/
