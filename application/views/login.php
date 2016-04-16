@@ -53,12 +53,12 @@ echo $buffer;
 		    
 
 		        <div class="form-group">
-			        <label for = "fname">First Name:</label>
-			        <input type="text" class="form-control" id="fname" placeholder="Enter your forename">
+			        <label for = "fname">Username:</label>
+			        <input type="text" class="form-control" id="fname" placeholder="Enter your Username here">
 		        </div>
 		        <div class="form-group">
-			        <label for = "sname">Surname:</label>
-			        <input type="text" class="form-control" id="sname" placeholder="Enter your Surname">
+			        <label for = "sname">Password:</label>
+			        <input type="text" class="form-control" id="sname" placeholder="Enter your Password here">
 		        </div>
 		        <button type="submit" class="btn btn-primary">Login</button>
 		
