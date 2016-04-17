@@ -16,55 +16,35 @@ echo $buffer;
             <p><a href="sign_up" class="btn btn-primary btn-large">Sign Up Page</a></p>
         </header>
 	<hr>
-<!--
-<h2>Account Login</h2>
-		<form class = "form-inline">
-		<?php echo form_open('site/login');?>
 	
-		<p>
-			<label class = "test"  for = "fname">Username:</label>
-			<input type = "text" class = "form-control" name="uname" id="uname" placeholder="Enter Username"/> <?php echo form_error('uname'); ?>
-			
-		</p>
-		
-		<p>
-			<label class = "test"  for = "sname">Password:</label>
-			<input type = "password" class = "form-control" name="pword" id="pword" placeholder="Enter Password"/> <?php echo form_error('pword'); ?>
-		</p>
-		<p>
-			<input type = "submit" value="Login" class = "btn btn-default"/>
-		</p>
-		
-
-		<?php echo form_close();?>
-		</form> -->
-	
-		
-			
-			<!-- Sign up Form -->
+		<!-- Sign up Form -->
 		        <div class="panel panel-primary margin-bottom-40">
 		        <div class="panel-heading">
 		        	<h3 class="panel-title"><i class="fa fa-tasks"></i> Login to your current Account</h3>
 		        </div>
 		        <div class="panel-body">
 		       
-		    <?php echo form_open('site/login');?> 
-		    <form class="margin-bottom-40" role="form">
-		    
-
+		    <?php echo form_open('login_controller/validate_credentials');?> 
+			
 		        <div class="form-group">
-			        <label for = "fname">Username:</label>
-			        <input type="text" class="form-control" id="fname" placeholder="Enter your Username here">
+			        <label for = "uname">Username:</label>
+			        <input type="text" class="form-control" id="uname"  name="uname" placeholder="Enter your Username here">
 		        </div>
 		        <div class="form-group">
-			        <label for = "sname">Password:</label>
-			        <input type="text" class="form-control" id="sname" placeholder="Enter your Password here">
+			        <label for = "pword">Password:</label>
+			        <input type="text" class="form-control" id="pword" name="pword" placeholder="Enter your Password here">
 		        </div>
 		        <button type="submit" class="btn btn-primary">Login</button>
+				<a class="btn btn-default" href="<?php echo base_url("index.php/login/signup"); ?>" style = "margin-right:10px;">Create Account</a>
+				
+			<?php echo form_close(); ?>
+			
 		
-		</form>
+		
 		</div>
 		</div>
+	
+		
 
 	<hr>
 	    

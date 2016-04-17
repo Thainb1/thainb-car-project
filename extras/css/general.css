@@ -131,3 +131,19 @@ th {
 td.upload{
 width:250px; 
 }
+
+input[type=text], input[type=password]{
+	display:block;
+	margin:0px 0px 10px 0px;
+	width:100%;
+	-moz-border-radius: 3px;
+	-webkit-border-radius:3px;
+	padding:5px;
+	outline:1px;
+	outline-color:#213d6c;
+}
+
+input[type=submit], form a {
+	
+	
+}

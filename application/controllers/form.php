@@ -61,7 +61,7 @@ class Form extends CI_Controller {
             'user_mobile' => $this->input->post('mobile-ph'),
             'user_home_phone' => $this->input->post('home-ph'),
             'user_username' => $this->input->post('uname'),
-            'user_password' => $this->input->post('pword'),
+            'user_password' => md5($this->input->post('pword')),
             'user_status' => $this->input->post('status')
             );
 
