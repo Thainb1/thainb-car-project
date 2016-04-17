@@ -2,7 +2,7 @@
 body{margin:0; padding:0;}
 label.test {display: block;}
 th, td {padding:0px 20px; height:40px; text-align:center;}
-td.buttons{padding:0; width:250px; height:40px;}
+td.buttons{padding:0; width:350px; height:30px;}
 p.price{margin:5px 0px 10px 0px; padding:0; font-size:20px; font-weight:bold;}
 h4{margin:0; padding:0;}
 p.glyph{margin:0; padding:0;}
@@ -128,3 +128,6 @@ th {
     background:pink;
 }
 
+td.upload{
+width:250px; 
+}

@@ -70,46 +70,10 @@ echo $buffer;
                             </div>
 
 
-                            <!-- Test for picture window for when images are uploaded for preview (Style will go in general.css)-->
-
-                            <div>Car Image Upload Area</div>
                             
-                            <div class="panel panel-default">
 
-                                <div class="panel-body" style="height:150px; padding:0;">
+                            <button type="submit" name="mainform" class="btn btn-primary" style="margin-top:10px;">Add Car Record</button>
 
-                                <!-- This will be the primary "Profile picture of the car" -->
-                                    <div class="btn btn-primary" style="float:left; width:100px; height:100px; margin:25px;"><i class="fa fa-camera-retro fa-4x" style="line-height:85px;"></i></div>
-
-                                <!-- These will be the other images...These will not be visible, they will apear as the previous image is filled" -->
-                                    <div class="btn btn-default" style="float:left; width:100px; height:100px; margin:25px;"><i class="fa fa-camera-retro fa-4x" style="line-height:85px;"></i></div>
-                                    <div class="btn btn-default" style="float:left; width:100px; height:100px; margin:25px;"><i class="fa fa-camera-retro fa-4x" style="line-height:85px;"></i></div>
-                                    <div class="btn btn-default" style="float:left; width:100px; height:100px; margin:25px;"><i class="fa fa-camera-retro fa-4x" style="line-height:85px;"></i></div>
-                                    <div class="btn btn-default" style="float:left; width:100px; height:100px; margin:25px;"><i class="fa fa-camera-retro fa-4x" style="line-height:85px;"></i></div>
-                                    <div class="btn btn-default" style="float:left; width:100px; height:100px; margin:25px;"><i class="fa fa-camera-retro fa-4x" style="line-height:85px;"></i></div>
-                                    <div class="btn btn-default" style="float:left; width:100px; height:100px; margin:25px;"><i class="fa fa-camera-retro fa-4x" style="line-height:85px;"></i></div>
-
-                                    
-
-                                </div>
-                            </div>
-
-                            <!-- Test for adding pictures on a button (Style in general.css | .add_box)-->
-                            <div style="width:300px;">
-                                <?php 
-                                    echo form_open_multipart('gallery');
-                                    echo form_upload('userfile');
-                                    echo form_submit('upload', 'Upload');
-                                    echo form_close();
-                                ?>
-                            </div>
-
-
-                            <div>
-                            <button type="submit" class="btn btn-primary">Add Car Record</button>
-                            </div>
-                            
-                            
                         </form>
 
                         <!-- <?php echo form_close();?> -->

@@ -50,9 +50,14 @@ echo $buffer;
 						<td><?php echo $row->car_price; ?></td>
 						<td><?php echo $row->car_transmission; ?></td>
 						<td><?php echo $row->special_id; ?></td>
-						<td class = "buttons"><a class="btn btn-success btn-lrg" href="<?php echo base_url("index.php/site/edit/$row->car_id"); ?>" style = "width:80px;  margin-right:10px;">UPDATE</a>
+						
+						<td class = "buttons"><a class="btn btn-success btn-lrg" href="<?php echo base_url("index.php/site/edit/$row->car_id"); ?>" style = "width:80px;  margin-right:10px; ">UPDATE</a>
 
-						<a class="btn btn-danger btn-lrg" href="<?php echo base_url("index.php/site/delete/$row->car_id"); ?>" style = "width:80px;  margin-right:10px;">DELETE</a></td>
+						<a class="btn btn-danger btn-lrg" href="<?php echo base_url("index.php/site/delete/$row->car_id"); ?>" style = "width:80px;  margin-right:10px; ">DELETE</a>
+						
+						<a class="btn btn-primary btn-lrg" href="<?php echo base_url("gallery/add_car_pics/$row->car_id"); ?>" style = "width:130px;  margin-right:10px; ">ADD PICTURES</a>
+						
+						</td>
 					</tr>
 				</tbody>
 			
