@@ -78,13 +78,18 @@ echo $buffer;
 
                                 <div class="panel-body" style="height:150px; padding:0;">
 
-                                    <div style="float:left; width:100px; height:100px; margin:25px; background:grey;"></div>
-                                    <div style="float:left; width:100px; height:100px; margin:25px; background:grey;"></div>
-                                    <div style="float:left; width:100px; height:100px; margin:25px; background:grey;"></div>
-                                    <div style="float:left; width:100px; height:100px; margin:25px; background:grey;"></div>
-                                    <div style="float:left; width:100px; height:100px; margin:25px; background:grey;"></div>
-                                    <div style="float:left; width:100px; height:100px; margin:25px; background:grey;"></div>
-                                    <div style="float:left; width:100px; height:100px; margin:25px; background:grey;"></div>
+                                <!-- This will be the primary "Profile picture of the car" -->
+                                    <div class="btn btn-primary" style="float:left; width:100px; height:100px; margin:25px;"><i class="fa fa-camera-retro fa-4x" style="line-height:85px;"></i></div>
+
+                                <!-- These will be the other images...These will not be visible, they will apear as the previous image is filled" -->
+                                    <div class="btn btn-default" style="float:left; width:100px; height:100px; margin:25px;"><i class="fa fa-camera-retro fa-4x" style="line-height:85px;"></i></div>
+                                    <div class="btn btn-default" style="float:left; width:100px; height:100px; margin:25px;"><i class="fa fa-camera-retro fa-4x" style="line-height:85px;"></i></div>
+                                    <div class="btn btn-default" style="float:left; width:100px; height:100px; margin:25px;"><i class="fa fa-camera-retro fa-4x" style="line-height:85px;"></i></div>
+                                    <div class="btn btn-default" style="float:left; width:100px; height:100px; margin:25px;"><i class="fa fa-camera-retro fa-4x" style="line-height:85px;"></i></div>
+                                    <div class="btn btn-default" style="float:left; width:100px; height:100px; margin:25px;"><i class="fa fa-camera-retro fa-4x" style="line-height:85px;"></i></div>
+                                    <div class="btn btn-default" style="float:left; width:100px; height:100px; margin:25px;"><i class="fa fa-camera-retro fa-4x" style="line-height:85px;"></i></div>
+
+                                    
 
                                 </div>
                             </div>

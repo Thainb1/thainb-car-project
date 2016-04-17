@@ -37,10 +37,7 @@ class Gallery_model extends CI_Model {
 
 		}
 
-		function get_images() {
-			$files = s
-
-		}
+		
 
 }
 /* https://www.youtube.com/watch?v=4kaNVfPxYkU (22.25) */
