@@ -43,7 +43,7 @@ class Gallery extends CI_Controller{
 		{
 			$deets['records'] = $query;
 		}
-		$this->Gallery_model->image_upload();
+		$this->Gallery_model->image_upload($c_id);
 		$this->load->view('add_pics', $deets);
 	}
 	
