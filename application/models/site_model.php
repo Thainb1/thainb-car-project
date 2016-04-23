@@ -17,6 +17,7 @@ class site_model extends CI_Model {
 	function add_record($data)
 	{
 		$this->db->insert('car_details_table', $data);
+		
 		return;
 	}
 
@@ -149,6 +150,22 @@ function add_user($data)
 	{
 		$this->db->where('car_id', $this->uri->segment(3));
 		$query = $this->db->get('car_details_table');
+		
+		return $query->result();
+	}
+	
+	function calling_car_dir()
+	{
+		$this->db->where('car_id', $this->uri->segment(3));
+		$query = $this->db->get('car_details_table');
+		
+		$path = (FCPATH . 'car_stock_images/' . $this->uri->segment(3));
+
+			if(!is_dir($path)) //create the folder if it's not already exists
+		{	
+			mkdir ($path,0755,TRUE);
+		}
+		
 		return $query->result();
 	}
 }

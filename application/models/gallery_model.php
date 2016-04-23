@@ -1,6 +1,7 @@
 <?php
 
-class Gallery_model extends CI_Model {
+class Gallery_model extends CI_Model 
+{
 
 	var $gallery_path;
 	var $gallery_path_url;
@@ -66,4 +67,5 @@ class Gallery_model extends CI_Model {
 			
 			return $images;			
 		}
-	}
+		
+}

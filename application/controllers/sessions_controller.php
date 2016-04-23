@@ -9,7 +9,7 @@ class Sessions_controller extends CI_Controller {
 	
 	
 	function customer_dash() {
-		$this->load->view('home');		
+		$this->load->view('customer_dashboard');		
 	}
 	
 	function staff_dash() {
@@ -17,7 +17,7 @@ class Sessions_controller extends CI_Controller {
 	}
 	
 	function admin_dash() {
-		$this->load->view('admin');	
+		$this->load->view('admin_dashboard');	
 	}
 	
 	function is_logged_in(){
