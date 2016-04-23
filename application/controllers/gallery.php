@@ -20,15 +20,31 @@ class Gallery extends CI_Controller{
 	/* Delivers the information to the add_pics page to give the image name info (the car_id) */
 	
 	function add_car_pics()
-	
 	{
+		
 		$data = array();
-
-		if ($query = $this->site_model->calling_car_dir()) 
+		
+		$c_id = $this->uri->segment(3);
+		
+		if ($query = $this->Gallery_model->calling_car_dir($c_id)) 
 		{
 			$data['records'] = $query;
 		}
 		
 		$this->load->view('add_pics', $data);
 	}
+	
+	function maintain_deets(){
+		
+		$deets = array();
+		
+		$c_id = $this->input->post('id_p');
+		if ($query = $this->Gallery_model->get_details($c_id))
+		{
+			$deets['records'] = $query;
+		}
+		$this->Gallery_model->image_upload();
+		$this->load->view('add_pics', $deets);
+	}
+	
 }

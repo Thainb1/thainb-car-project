@@ -68,4 +68,64 @@ class Gallery_model extends CI_Model
 			return $images;			
 		}
 		
+		function calling_car_dir()
+		{
+			$this->db->where('car_id', $this->uri->segment(3));
+			$query = $this->db->get('car_details_table');
+			
+			$path = (FCPATH . 'car_stock_images/' . $this->uri->segment(3));
+
+				if(!is_dir($path)) //create the folder if it's not already exists
+			{	
+				mkdir ($path,0755,TRUE);
+			}
+			
+			return $query->result();
+		}
+		
+		function image_upload(){
+			
+			if(isset($_FILES['image']))
+			{
+				//if no errors...
+				if(!$_FILES['image']['error'])
+				{
+					//now is the time to modify the future file name and validate the file
+					$valid_file =true;
+					$ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+					$new_file_name = uniqid(rand(), true) . '.' . $ext; //rename file
+						if($_FILES['image']['size'] > (1024000)) //can't be larger than 1 MB
+						{
+							$valid_file = false;
+							$message = 'Oops!  Your file size is to large.';
+						}
+		
+					//if the file has passed the test
+					if($valid_file)
+					{
+			
+						//move it to where we want it to be
+						move_uploaded_file($_FILES['image']['tmp_name'], $this->gallery_path_url . $this->uri->segment(3) . $new_file_name);
+						$message = 'Congratulations!  Your file was accepted.';
+					}
+				}
+				//if there is an error...
+				else
+				{
+					//set that to be the returned message
+					$message = 'Ooops!  Your upload triggered the following error:  '.$_FILES['image']['error'];
+				}
+			
+				echo $message; ?><br><?php
+				echo "File uploaded under the name: " . $new_file_name;
+			}
+		}
+		
+		function get_details($c_id)
+		{
+			
+			$this->db->where('car_id', $c_id);
+			$query = $this->db->get('car_details_table');
+			return $query->result();		
+		}
 }
