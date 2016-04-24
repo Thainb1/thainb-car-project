@@ -103,10 +103,10 @@ class Gallery_model extends CI_Model
 					//if the file has passed the test
 					if($valid_file)
 					{
-						$gallery_path_url = (FCPATH .'car_stock_images/');
+						$gallery_path_url = FCPATH .'car_stock_images'. DIRECTORY_SEPARATOR . $c_id . DIRECTORY_SEPARATOR . $new_file_name;
 			
 						//move it to where we want it to be
-						move_uploaded_file($_FILES['photo']['tmp_name'], $gallery_path_url . "/" . $c_id . "/" . $new_file_name);
+						move_uploaded_file($_FILES['photo']['tmp_name'], $gallery_path_url);
 						$message = 'Congratulations!  Your file was accepted.';
 					}
 				}
@@ -117,10 +117,18 @@ class Gallery_model extends CI_Model
 					$message = 'Ooops!  Your upload triggered the following error:  '.$_FILES['photo']['error'];
 				}
 			
-				echo $message; ?><br><?php
-				echo "File uploaded under the name: " . $new_file_name;
-				
+				echo $message; ?> <br> <?php
+				echo "File uploaded under the name: " . $new_file_name; ?> <br> <?php
+				echo $gallery_path_url;
 			}
+			
+			$pic_db = array(
+				'car_id' => $c_id,
+				'image_src' => $gallery_path_url  				
+			);
+			
+			$this->db->insert('car_image_table', $pic_db);
+			
 		}
 		
 		function get_details($c_id)
@@ -129,5 +137,11 @@ class Gallery_model extends CI_Model
 			$this->db->where('car_id', $c_id);
 			$query = $this->db->get('car_details_table');
 			return $query->result();		
+		}
+		
+		function get_db_pics(){
+			$this->db->where('car_id', $c_id);
+			$query = $this->db->get('car_image_table');
+			return $query->result();	
 		}
 }

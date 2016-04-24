@@ -39,12 +39,28 @@ class Gallery extends CI_Controller{
 		$deets = array();
 		
 		$c_id = $this->input->post('id_p');
+		
 		if ($query = $this->Gallery_model->get_details($c_id))
-		{
-			$deets['records'] = $query;
-		}
+			{
+				$deets['deet_rec'] = $query;
+			}
+
 		$this->Gallery_model->image_upload($c_id);
+		
 		$this->load->view('add_pics', $deets);
+	}
+	
+	
+	function get_pics(){
+		
+		$existing_pics = array();
+
+		if ($query = $this->Gallery_model->get_db_pics()) 
+			{
+				$existing_pics['records'] = $query;
+			}
+		
+		$this->load->view('add_pics',$existing_pics);
 	}
 	
 }
