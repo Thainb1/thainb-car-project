@@ -28,39 +28,36 @@ class Gallery extends CI_Controller{
 		
 		if ($query = $this->Gallery_model->calling_car_dir($c_id)) 
 		{
-			$data['records'] = $query;
+			$deets['records'] = $query;
 		}
 		
-		$this->load->view('add_pics', $data);
-	}
-	
-	function maintain_deets(){
-		
-		$deets = array();
-		
-		$c_id = $this->input->post('id_p');
-		
-		if ($query = $this->Gallery_model->get_details($c_id))
+		if ($query0 = $this->Gallery_model->get_db_pics($c_id)) 
 			{
-				$deets['deet_rec'] = $query;
+				$deets['pics'] = $query0;
 			}
-
-		$this->Gallery_model->image_upload($c_id);
 		
 		$this->load->view('add_pics', $deets);
 	}
 	
-	
-	function get_pics(){
+	function maintain_deets(){
+		$c_id = "";
+		$deets = array();
 		
-		$existing_pics = array();
-
-		if ($query = $this->Gallery_model->get_db_pics()) 
+		$c_id = $this->input->post('id_p');
+		
+		if ($query1 = $this->Gallery_model->get_details($c_id))
 			{
-				$existing_pics['records'] = $query;
+				$deets['records'] = $query1;
 			}
+			
+		if ($query2 = $this->Gallery_model->get_db_pics($c_id)) 
+			{
+				$deets['pics'] = $query2;
+			}
+			
+		$this->Gallery_model->image_upload($c_id);
 		
-		$this->load->view('add_pics',$existing_pics);
+		$this->load->view('add_pics', $deets);
 	}
-	
+		
 }

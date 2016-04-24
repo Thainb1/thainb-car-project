@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="<?php echo base_url("extras/js/jQuery.min.js"); ?>"></script>
 	<!-- Bootstrap JavaScript include -->
 	<script type="text/javascript" src="<?php echo base_url("extras/js/bootstrap.min.js"); ?>"></script>
-
+	
 </body>
 
 </html>

@@ -65,8 +65,15 @@
                     </li>
                 </ul>
 				<ul class="nav navbar-nav navbar-right">
+				
+				<?php if ($this->session->userdata('username')) { ?>
+					<li>You are logged in</li>
+					<li><a href="<?php echo site_url('login_controller/logout');?>"><span class="glyphicons glyphicons-door"></span>Logout</a></li
+				<?php } else { ?>
 					<li><a href="<?php echo site_url('site/sign_up'); ?>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 					<li><a href="<?php echo site_url('site/log_in'); ?>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				<?php } ?>
+				
 				</ul>
             </div>
             <!-- /.navbar-collapse -->

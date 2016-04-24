@@ -78,6 +78,13 @@
                             <li><a href="<?php echo site_url('form/users_db'); ?>">View | Edit | Delete</a></li>
                         </ul>
                     </li>
+					
+					<?php if ($this->session->userdata('username')) { ?>
+					<li><p class="navbar-text">Oh Snap! You're logged in, <span style="color:#FFF;"><?php echo $this->session->userdata('username'); ?><?php echo $this->session->userdata('privilage'); ?></span></p></li>
+					<li><a href="<?php echo site_url('login_controller/logout');?>"><span class="glyphicon glyphicon-off" style="padding-right:5px;"></span>Logout</a></li>
+					<?php } ?>
+					
+					
 
             <!-- /.navbar-collapse -->
         </div>

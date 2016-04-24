@@ -9,26 +9,16 @@ echo $buffer;
 
 <div>
 
-
-<h3>Adding Pictures for</h3>
-
-<!--
-<div id="pics">
-
-<?php if(count($existing_pics) > 0 )  { ?>
-<?php foreach ($existing_pics as $row) : ?>
-<h3> <?php echo $row->image_id; ?> </h3>
-<h3> <?php echo $row->car_id; ?> </h3>
-<img src="<?php echo $row->image_src; ?>" class="img-responsive">
+<?php if(!isset($deets['records'])) { ?>
+<?php foreach($records as $data) : ?>
+<h3>Adding Pictures for <?php echo $data->car_year ." ". $data->car_make ." ". $data->car_model; ?></h3>
 <?php endforeach; ?>
-<?php }else{ ?>
-That's strange, no images were found.
-<?php } ?>
--->
-
-</div>
-
-                                
+<?php } else { ?>
+<?php foreach($records as $deets) : ?>
+<h3>Adding Pictures for <?php echo $deets->car_year ." ". $deets->car_make ." ". $deets->car_model; ?></h3>
+<?php endforeach; ?>
+<?php } ?> 
+                    
 <div id="upload">
 
 <?php echo form_open_multipart('gallery/maintain_deets'); ?>
@@ -36,9 +26,10 @@ Photo Upload: <input type="file" name="photo" size="25" />
 <input type="submit" name="submit" value="Submit" />
 
 
-<?php if(!isset($deets['deet_rec'])) { ?>
 
-	<?php foreach($deet_rec as $data) : ?>
+<?php if(!isset($deets['records'])) { ?>
+
+	<?php foreach($records as $data) : ?>
 	
 		<input type = "hidden" name="id_p" id="id_p" value="<?php echo set_value('id_p', $data->car_id); ?>" />
 		<input type = "hidden" name="make_p" id="make_p" value="<?php echo set_value('make_p', $data->car_make); ?>" />
@@ -49,7 +40,7 @@ Photo Upload: <input type="file" name="photo" size="25" />
 
 <?php } else { ?>
 
-	<?php foreach($deet_rec as $deets) : ?>
+	<?php foreach($records as $deets) : ?>
 	
 		<input type = "hidden" name="id_p" id="id_p" value="<?php echo set_value('id_p', $deets->car_id); ?>" />
 		<input type = "hidden" name="make_p" id="make_p" value="<?php echo set_value('make_p', $deets->car_make); ?>" />
@@ -60,7 +51,12 @@ Photo Upload: <input type="file" name="photo" size="25" />
 
 <?php } ?>
 
-
+	<div class="pic_wrapper">
+			<?php foreach ($pics as $deets) : ?>
+				<div class="pic_box"><img style="width:100%; height:100%;" src="<?php echo $deets->image_src; ?>"></div>
+			<?php endforeach; ?>
+	</div>
+	
 <?php echo form_close(); ?>
 
 </div>

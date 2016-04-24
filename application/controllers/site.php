@@ -241,7 +241,7 @@ class Site extends CI_Controller
 	/*--- Controller to the ADMIN DASHBOARD Page ---*/
 	function admin()
 	{
-		$this->load->view('admin');
+		$this->load->view('admin_dashboard');
 	}
 
 	/*--- Controller to the STAFF DASHBOARD Page ---*/
@@ -273,7 +273,7 @@ class Site extends CI_Controller
 			$data['records'] = $query;
 		}
 		$this->load->view('car_database',$data);
-	}
+		}
 	/*--- / end load views set ---*/
 	}
 

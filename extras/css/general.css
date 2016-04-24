@@ -132,18 +132,36 @@ td.upload{
 width:250px; 
 }
 
-input[type=text], input[type=password]{
-	display:block;
-	margin:0px 0px 10px 0px;
-	width:100%;
-	-moz-border-radius: 3px;
-	-webkit-border-radius:3px;
-	padding:5px;
-	outline:1px;
-	outline-color:#213d6c;
+.pic_page_wrapper{
+margin:0 auto;
+width:900px;	
+	
 }
 
-input[type=submit], form a {
+.pic_wrapper{
+	width:900px;
+	margin:10px auto;
+	background:pink;
+	padding:10px;
 	
+	overflow:hidden;
+}
+
+.pic_box{
+	float:left;
+	diplay:inline-block;
+	padding:0;
+	width:200px;
+	height:200px;
+	margin:10px 0px 0px 10px;
+}
+
+h1, h3{
+	color:#213d6c;	
+}
+
+p.loggedin{
+	font-size:14px;
+	line-height:35px;
 	
 }

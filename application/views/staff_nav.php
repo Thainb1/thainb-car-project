@@ -70,6 +70,12 @@
                             <li><a href="<?php echo site_url('site/news_db'); ?>">View | Edit | Delete</a></li>
                         </ul>
                     </li>
+					
+					<?php if ($this->session->userdata('username')) { ?>
+					<li>You are logged in</li>
+					<li><a href="<?php echo site_url('login_controller/logout');?>"><span class="glyphicons glyphicons-door"></span>Logout</a></li>
+					<?php } ?>
+					
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->

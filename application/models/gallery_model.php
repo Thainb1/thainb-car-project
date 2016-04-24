@@ -94,7 +94,7 @@ class Gallery_model extends CI_Model
 					$valid_file =true;
 					$ext = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
 					$new_file_name = uniqid(rand(), true) . '.' . $ext; //rename file
-						if($_FILES['photo']['size'] > (1024000)) //can't be larger than 1 MB
+						if($_FILES['photo']['size'] > (5024000)) //can't be larger than 5 MB
 						{
 							$valid_file = false;
 							$message = 'Oops!  Your file size is to large.';
@@ -104,7 +104,24 @@ class Gallery_model extends CI_Model
 					if($valid_file)
 					{
 						$gallery_path_url = FCPATH .'car_stock_images'. DIRECTORY_SEPARATOR . $c_id . DIRECTORY_SEPARATOR . $new_file_name;
-			
+						$db_path_url = Base_url() .'car_stock_images'. DIRECTORY_SEPARATOR . $c_id . DIRECTORY_SEPARATOR . $new_file_name;
+						
+						/*
+						
+						$config = array(
+						'allowed_types' => 'jpg|jpeg|gif|png', 
+						'upload_path' => $this->gallery_path,
+						'max_size' => 10000000
+						'maintain_ration' => true,
+						'width' => 150,
+						'height' => 100
+						);
+						
+						$this->load->library('image_lib', $config);
+						$this->image_lib->resize();
+						
+						*/
+						
 						//move it to where we want it to be
 						move_uploaded_file($_FILES['photo']['tmp_name'], $gallery_path_url);
 						$message = 'Congratulations!  Your file was accepted.';
@@ -124,10 +141,11 @@ class Gallery_model extends CI_Model
 			
 			$pic_db = array(
 				'car_id' => $c_id,
-				'image_src' => $gallery_path_url  				
+				'image_src' => $db_path_url  				
 			);
 			
 			$this->db->insert('car_image_table', $pic_db);
+			unset($pic_db);
 			
 		}
 		
@@ -139,9 +157,46 @@ class Gallery_model extends CI_Model
 			return $query->result();		
 		}
 		
-		function get_db_pics(){
+		function get_db_pics($c_id){
 			$this->db->where('car_id', $c_id);
 			$query = $this->db->get('car_image_table');
-			return $query->result();	
+				if ($query->num_rows() > 0)
+					{
+						echo "Yay! Images found!";
+					} else {
+						echo "No images currently available, Please Upload!";
+					}
+				return $query->result();
 		}
+		
+		/* TEST FOR A CLEANER METHOD ------------------------------------------ END */
+		
+		function get_details2($c_id)
+		{
+			
+			$this->db->where('car_id', $c_id);
+			$query = $this->db->get('car_details_table');
+			$result = array();
+				
+			return $result;		
+		}
+		
+		function get_db_pics2($c_id)
+		{
+			$this->db->where('car_id', $c_id);
+			$query = $this->db->get('car_image_table');
+			$result = array();
+			
+			return $result;	
+		}
+		
+		
+		
+		
+		
+		
+		
+		/* TEST FOR A CLEANER METHOD ------------------------------------------ END */
+		
+		
 }
