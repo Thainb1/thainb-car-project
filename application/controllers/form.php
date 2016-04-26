@@ -33,7 +33,7 @@ class Form extends CI_Controller {
         );
 
         $this->form_validation->set_rules('pword', 'Password', 'required');
-        $this->form_validation->set_rules('rpword', 'Password Confirmation', 'required|matches[password]');
+        $this->form_validation->set_rules('rpword', 'Password Confirmation', 'required|matches[pword]');
 
         $this->form_validation->set_rules('email-ad', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('home-ph', 'Home Phone', 'required');
@@ -47,13 +47,13 @@ class Form extends CI_Controller {
                 }
                 else
                 {
-                        $this->load->view('login_success');
+                        $this->customer_create();
                 }
 	}
 
     function account_create(){
         
-        $data =  array(
+        $userdata =  array(
 
             'user_forename' => $this->input->post('fname'),
             'user_surname' => $this->input->post('sname'),
@@ -65,8 +65,26 @@ class Form extends CI_Controller {
             'user_status' => $this->input->post('status')
             );
 
-            $this->site_model->add_user($data);
-            $this->users();
+            $this->site_model->add_user($userdata);
+            $this->users_db();
+    }
+	
+	function customer_create(){
+        
+        $data =  array(
+
+            'user_forename' => $this->input->post('fname'),
+            'user_surname' => $this->input->post('sname'),
+            'user_email' => $this->input->post('email-ad'),
+            'user_mobile' => $this->input->post('mobile-ph'),
+            'user_home_phone' => $this->input->post('home-ph'),
+            'user_username' => $this->input->post('uname'),
+            'user_password' => md5($this->input->post('pword')),
+            'user_status' => "1"
+            );
+
+            $this->site_model->add_customer($data);
+            $this->load->view('login');
     }
 
     function users()

@@ -18,7 +18,14 @@
 	<link rel="stylesheet" href="<?php echo base_url("extras/css/general.css"); ?>" />
 	<link rel="stylesheet" href="<?php echo base_url("extras/css/heroic-features.css"); ?>" />
     <link rel="stylesheet" href="<?php echo base_url("extras/css/font-awesome.min.css"); ?>" />
-    
+  
+  
+	<link rel="stylesheet" href="<?php echo base_url("extras/sss/sss.css"); ?>" type="text/css" media="all">
+	
+	
+	
+	
+	
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -58,10 +65,7 @@
                         <?php echo anchor('Site/about', 'About us', 'class="link-class"') ?>
                     </li>
                     <li>
-                        <?php echo anchor('form/users_db', 'Test Link', 'class="link-class"') ?>
-                    </li>
-                    <li>
-                        <?php echo anchor('Gallery/gallery', 'Gallery', 'class="link-class"') ?>
+                        <?php echo anchor('form/users_db', 'Other Services', 'class="link-class"') ?>
                     </li>
                 </ul>
 				<ul class="nav navbar-nav navbar-right">

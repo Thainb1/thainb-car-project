@@ -23,7 +23,7 @@ echo $buffer;
                     </div>
                     <div class="panel-body">
 
-                    <?php echo form_open('form/users_db');?> 
+                    <?php echo form_open('form/account_create');?> 
 
                             <div class="form-group">
                                 <label for = "fname">First Name:</label>

@@ -9,42 +9,25 @@ echo $buffer;
 
 <div class="container">
 
-<?php if(isset($records)): foreach($records as $row) : ?>
-
-
-<h1><?php echo $row->car_year ." ". $row->car_make ." ". $row->car_model; ?></h1>
     <div class="row">
 
-        <div class="col-md-8 col-md-offset-2" style="margin-top:30px;">
+        <div class="col-md-8 col-md-offset-2" style="margin-top:30px; ?>');">
 
-            <div class="thumbnail" style="padding:10px; margin-bottom:0;">
-                <img class="img-responsive" src="<?php echo base_url("img/main_car.jpg"); ?>" alt="">
-
+            <div class="thumbnail" style="padding:10px; margin-bottom:0; background-image: url('<?php echo base_url("img/main_car.jpg"); ?>">
+				<div class="slider">
+				
+				<?php if(!isset($data['pics'])) { ?>
+				<?php foreach($pics as $data) : ?>
+					<img src="<?php echo $data->image_src; ?>" alt="">
+				<?php endforeach; ?>
+				<?php } ?>
+				</div>
                 <div class="row" style="margin-top:10px;">
-				
-            	<div class="col-md-3 portfolio-item">
-	                <a href="#">
-	                <img class="img-responsive" src="<?php echo base_url("img/small_car.jpg"); ?>" alt=""></a>
-            	</div>
-
-				
-            	<div class="col-md-3 portfolio-item">
-	                <a href="#">
-	                <img class="img-responsive" src="<?php echo base_url("img/small_car.jpg"); ?>" alt=""></a>
-            	</div>
-
-            	<div class="col-md-3 portfolio-item">
-	                <a href="#">
-	                <img class="img-responsive" src="<?php echo base_url("img/small_car.jpg"); ?>" alt=""></a>
-            	</div>
-
-            	<div class="col-md-3 portfolio-item">
-	                <a href="#">
-	                <img class="img-responsive" src="<?php echo base_url("img/small_car.jpg"); ?>" alt=""></a>
-            	</div>
-
+			
 				</div>
 			</div>
+			
+<?php if(isset($records)): foreach($records as $row) : ?>
 
         <div class="caption-full" style="margin:10px 0px;">
                     <h4 class="pull-right"><?php echo "£".$row->car_price; ?></h4>
@@ -69,6 +52,7 @@ echo $buffer;
 						        <th>Transmission</th>
 	      					</tr>
     					</thead>
+						
     					<tbody>
 					      	<tr>
 					      		<td><?php echo $row->car_id; ?></td>

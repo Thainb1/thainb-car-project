@@ -134,9 +134,12 @@ class Gallery_model extends CI_Model
 					$message = 'Ooops!  Your upload triggered the following error:  '.$_FILES['photo']['error'];
 				}
 			
+			/*
 				echo $message; ?> <br> <?php
 				echo "File uploaded under the name: " . $new_file_name; ?> <br> <?php
 				echo $gallery_path_url;
+			*/
+			
 			}
 			
 			$pic_db = array(
@@ -145,8 +148,9 @@ class Gallery_model extends CI_Model
 			);
 			
 			$this->db->insert('car_image_table', $pic_db);
-			unset($pic_db);
-			
+		
+		
+		
 		}
 		
 		function get_details($c_id)
@@ -158,14 +162,18 @@ class Gallery_model extends CI_Model
 		}
 		
 		function get_db_pics($c_id){
+			
+			$this->db->from('car_image_table');
 			$this->db->where('car_id', $c_id);
-			$query = $this->db->get('car_image_table');
-				if ($query->num_rows() > 0)
+			$this->db->order_by("upload_time", "asc");
+			$query = $this->db->get();
+				
+				/*if ($query->num_rows() > 0)
 					{
 						echo "Yay! Images found!";
 					} else {
 						echo "No images currently available, Please Upload!";
-					}
+					}*/
 				return $query->result();
 		}
 		

@@ -6,6 +6,48 @@ class Login_controller extends CI_Controller{
 		$this->load->view('site/index');	
 	}
 	
+	function test(){
+		$this->load->view('test_page');	
+	}
+	
+	function logout(){
+		$this->session->sess_destroy();
+		redirect ('site/index');
+	}
+	
+	
+	function validate_credentials(){
+		
+		$this->load->model('membership_model');
+		$query = $this->membership_model->validate();
+		$status = $this->membership_model->get_status();
+		
+		if($query == true)
+		{
+			session_start();
+			$session_id = $this->session->session_id;
+			
+			$data = array(
+				
+				'username' => $this->input->post('uname'),
+				'privilege' => $status,
+				'session_id' => $session_id,
+				'is_logged_in' => true
+			);
+			
+			$this->session->set_userdata($data);
+			
+			$this->membership_model->store_sess_id($session_id);
+		
+			redirect('login_controller/test');
+		}
+		else
+		{
+		echo "There is an error, Here!";	
+		}
+	}
+	
+	/*
 	function login(){
 		$data['error']=0;
 		if($_POST){
@@ -25,38 +67,5 @@ class Login_controller extends CI_Controller{
 		$this->load->view('site/index');
 		
 	}
-
-	
-	function logout(){
-		$this->session->sess_destroy();
-		redirect ('site/index');
-	}
-	
-	
-	function validate_credentials(){
-		
-		$this->load->model('membership_model');
-		$query = $this->membership_model->validate();
-		
-		if($query == true)
-		{
-			
-			
-			
-			$data = array(
-				
-				'username' => $this->input->post('uname'),
-				'privilage' => $status,
-				'is_logged_in' => true
-			);
-			
-			$this->session->set_userdata($data);
-			redirect('site/admin');
-		}
-		else
-		{
-		echo "There is an error, Here!";	
-		}
-	}
-	
+	*/
 }

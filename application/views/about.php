@@ -22,9 +22,9 @@ echo $buffer;
         <!-- Intro Content -->
         <div class="row">
             <div class="col-md-6">
-                <img class="img-responsive" src="<?php echo base_url("img/about_holder.png"); ?>" alt="">
+                <img class="img-responsive big-pic" src="<?php echo base_url("img/about_holder.jpg"); ?>" alt="">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 about-align">
                 <h2>Steering you to the right choice</h2>
                 <p>Taunton Family car company has been a thriving dealership since the early 2000's; with over 16 years experience in the automotive industry, we dont only offer a fine range of used vehicles but many industry leading services to keep you and your new car happy for a long, long time.</p>
                 <p>Our staff have customer values at their very hearts and as an expanding family business, our growth hasnt happend by chance; we have listened to and learnt from our customers over nearly two decads to deliver the finest customer service, the best quality products and all at a highly competative cost.</p>
@@ -42,18 +42,11 @@ echo $buffer;
                 <div class="thumbnail2">
                     <img class="test-image" src="<?php echo base_url("img/worker1.jpg"); ?>" alt="Ben">
                     <div class="caption">
-                        <h3 style="margin-top:5px;">Employee Example 1<br>
-                            <small>Example Job Title</small>
+                        <h3 style="margin-top:5px;">Michael Vickers<br>
+                            <small>Senior Sales Assistant</small>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                            </li>
-                        </ul>
+                        <p>Michael has been with us for over 15 years now and his customer service experience is second to none. Come and let Michael show you our latest stock!</p>
+                        
                     </div>
                 </div>
             </div>
@@ -61,18 +54,11 @@ echo $buffer;
                 <div class="thumbnail2">
                     <img class="test-image" src="<?php echo base_url("img/worker2.jpg"); ?>" alt="Steve">
                     <div class="caption">
-                        <h3>Employee Example 2<br>
-                            <small>Example Job Title</small>
+                        <h3>Alfie Tinker<br>
+                            <small>Head of servicing and Parts</small>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                            </li>
-                        </ul>
+                        <p>Alfie has roots in the community and is known for his work ethic and attention to detail. He has been head of parts and servicing for over 10 years.</p>
+                        
                     </div>
                 </div>
             </div>
@@ -80,18 +66,11 @@ echo $buffer;
                 <div class="thumbnail2">
                     <img class="test-image" src="<?php echo base_url("img/worker3.jpg"); ?>" alt="G">
                     <div class="caption">
-                        <h3>Employee Example 3<br>
-                            <small>Example Job Title</small>
+                        <h3>Olivia Makita<br>
+                            <small>Head Mechanic</small>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                            </li>
-                        </ul>
+                        <p>If Mia cant fix it, its not worth fixing! Not in the market for a new car? come and let Mia take a look and you'll be back on the road in no time!</p>
+                        
                     </div>
                 </div>
             </div>   

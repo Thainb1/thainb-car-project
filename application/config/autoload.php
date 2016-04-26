@@ -73,7 +73,7 @@ $autoload['libraries'] = array('database', 'form_validation', 'session');
 |
 |	$autoload['drivers'] = array('cache');
 */
-$autoload['drivers'] = array();
+$autoload['drivers'] = array('session');
 
 /*
 | -------------------------------------------------------------------

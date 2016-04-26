@@ -14,7 +14,7 @@ echo $buffer;
         <header class="jumbotron hero-spacer">
             <h1>Welcome to our Car Showroom!</h1>
             <p>Below you will find a list of our current stock, new cars will be added daily so please check back regularly, you may also benefit from signing up to our mailing list for information of deals and additional website functionalities!</p>
-            <p><a class="btn btn-primary btn-large">Contact Sales Team</a>
+            <p><a class="btn btn-primary btn-large" href="<?php echo base_url("site/contact"); ?>">Contact Sales Team</a>
             </p>
         </header>
 

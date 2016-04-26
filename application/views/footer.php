@@ -12,6 +12,14 @@
 	<!-- Bootstrap JavaScript include -->
 	<script type="text/javascript" src="<?php echo base_url("extras/js/bootstrap.min.js"); ?>"></script>
 	
+	<script type="text/javascript" src="<?php echo base_url("extras/sss/sss.min.js"); ?>"></script>
+	
+	<script>
+		jQuery(function($) {
+		$('.slider').sss();
+		});
+	</script>
+	
 </body>
 
 </html>

@@ -24,7 +24,7 @@ echo $buffer;
             <!-- Map Column -->
             <div class="col-md-8">
 
-                <img class="img-responsive" style="height:400px width:100%; "src="<?php echo base_url("img/about_holder.png"); ?>" alt="">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2509.490154580131!2d-3.1203403840268185!3d51.02556725363813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486df46849c7711f%3A0x9d557efe28b643b1!2sStaplegrove+Rd%2C+Taunton%2C+Somerset+TA1+1DE!5e0!3m2!1sen!2suk!4v1461709811257" width="650" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             
                 <!-- Embedded Google Map -->
                 <!--<iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>-->
@@ -38,24 +38,11 @@ echo $buffer;
                 <p><i class="fa fa-phone"></i> 
                     <abbr title="Phone">P</abbr>: (01823) 366470</p>
                 <p><i class="fa fa-envelope-o"></i> 
-                    <abbr title="Email">E</abbr>: <a href="mailto:name@example.com">name@example.com</a>
+                    <abbr title="Email">E</abbr>: <a href="mailto:name@example.com">ben@familycars.co.uk</a>
                 </p>
                 <p><i class="fa fa-clock-o"></i> 
                     <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
-                <ul class="list-unstyled list-inline list-social-icons">
-                    <li>
-                        <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-linkedin-square fa-2x"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
-                    </li>
-                </ul>
+                
             </div>
         </div>
         <!-- /.row -->

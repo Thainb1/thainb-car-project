@@ -141,9 +141,8 @@ width:900px;
 .pic_wrapper{
 	width:900px;
 	margin:10px auto;
-	background:pink;
+	/*background:#213d6c;*/
 	padding:10px;
-	
 	overflow:hidden;
 }
 
@@ -164,4 +163,12 @@ p.loggedin{
 	font-size:14px;
 	line-height:35px;
 	
+}
+
+.big-pic{
+	border-radius:20px;
+}
+
+.about-align{
+	text-align:justify;
 }

@@ -26,6 +26,12 @@ class site_model extends CI_Model {
 		$this->db->insert('user_accounts_table', $userdata);
 		return;
 	}
+	
+	function add_customer($data)
+	{
+		$this->db->insert('user_accounts_table', $data);
+		return;
+	}
 
 	function get_user($username, $password)
 	{

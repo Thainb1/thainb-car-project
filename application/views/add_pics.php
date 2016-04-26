@@ -7,7 +7,7 @@ $buffer=str_replace("%TITLE%","Adding Pictures",$buffer);
 echo $buffer;
 ?>
 
-<div>
+<div class="container">
 
 <?php if(!isset($deets['records'])) { ?>
 <?php foreach($records as $data) : ?>
@@ -21,11 +21,14 @@ echo $buffer;
                     
 <div id="upload">
 
-<?php echo form_open_multipart('gallery/maintain_deets'); ?>
-Photo Upload: <input type="file" name="photo" size="25" />
-<input type="submit" name="submit" value="Submit" />
-
-
+<table style = "Margin-top:50px;">
+	<tr>
+		<td><?php echo form_open_multipart('gallery/maintain_deets'); ?></td>
+		<td>Photo Upload: </td>
+		<td><input type="file" name="photo" size="25" /></td>
+		<td><input type="submit" name="submit" value="Submit" /></td>
+	<tr>
+</table>
 
 <?php if(!isset($deets['records'])) { ?>
 
@@ -58,6 +61,8 @@ Photo Upload: <input type="file" name="photo" size="25" />
 	</div>
 	
 <?php echo form_close(); ?>
+
+
 
 </div>
 <?php include 'footer.php' ?>

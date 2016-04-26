@@ -26,6 +26,9 @@ class Site extends CI_Controller
 		{
 			$data['records'] = $query;
 		}
+		
+		
+		
 		$this->load->view('showroom', $data);
 	}
 
@@ -227,17 +230,56 @@ class Site extends CI_Controller
 
 	/*--- Controller to the INDIVIDUAL CAR PAGE Page ---*/
 	function view_item()
-	
 	{
+		
+		$c_id = $this->uri->segment(3);
 		$data = array();
-
-		if ($query = $this->site_model->calling_car()) 
+		
+		if ($query1 = $this->site_model->calling_car()) 
 		{
-			$data['records'] = $query;
+			$data['records'] = $query1;
 		}
+		
+		if ($query2 = $this->Gallery_model->get_db_pics($c_id)) 
+			{
+				$data['pics'] = $query2;
+			}
+		
 		$this->load->view('car_item_view', $data);
 	}
 
+	/*--- TEST TEST TEST ---*/
+	
+	function maintain_deets(){
+		$c_id = "";
+		$deets = array();
+		
+		$c_id = $this->input->post('id_p');
+		
+		if ($query1 = $this->Gallery_model->get_details($c_id))
+			{
+				$deets['records'] = $query1;
+			}
+			
+		if ($query2 = $this->Gallery_model->get_db_pics($c_id)) 
+			{
+				$deets['pics'] = $query2;
+			}
+			
+		$this->Gallery_model->image_upload($c_id);
+		
+		$this->load->view('add_pics', $deets);
+	}
+	
+	/*--- TEST TEST TEST ---*/
+	
+	
+	
+	
+	
+	
+
+	
 	/*--- Controller to the ADMIN DASHBOARD Page ---*/
 	function admin()
 	{
